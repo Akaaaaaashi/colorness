@@ -1,30 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://dbheeit0lmakw"]
+[gd_scene load_steps=34 format=3 uid="uid://dbheeit0lmakw"]
 
 [ext_resource type="Script" path="res://scripts/rocket_cherry.gd" id="1_wljgj"]
 [ext_resource type="Texture2D" uid="uid://ctxbfau7h56oy" path="res://assets/Jellyfish/patrol.png" id="2_gw20q"]
 [ext_resource type="Texture2D" uid="uid://ftoq0b4g3dct" path="res://assets/Jellyfish/death.png" id="3_kh0tn"]
 [ext_resource type="PackedScene" uid="uid://blyc3kwwvxi1r" path="res://prefabs/hitbox.tscn" id="4_6tx8u"]
 [ext_resource type="Texture2D" uid="uid://iriuu04xfubq" path="res://assets/Jellyfish/stuneed.png" id="4_fr1qu"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rpg3w"]
-atlas = ExtResource("2_gw20q")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mokap"]
-atlas = ExtResource("2_gw20q")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i2dnl"]
-atlas = ExtResource("2_gw20q")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d5dpm"]
-atlas = ExtResource("2_gw20q")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q3okj"]
-atlas = ExtResource("2_gw20q")
-region = Rect2(128, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://cd06fbh4qp371" path="res://assets/Jellyfish/hurt.png" id="4_umjdt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edvaa"]
 atlas = ExtResource("3_kh0tn")
@@ -54,6 +35,46 @@ region = Rect2(160, 0, 32, 32)
 atlas = ExtResource("3_kh0tn")
 region = Rect2(192, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpg3w"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mokap"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2dnl"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5dpm"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3okj"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fpp5"]
+atlas = ExtResource("4_umjdt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02o87"]
+atlas = ExtResource("4_umjdt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ownyd"]
+atlas = ExtResource("4_umjdt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnvpp"]
+atlas = ExtResource("4_umjdt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6maj5"]
+atlas = ExtResource("4_umjdt")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ji3ks"]
 atlas = ExtResource("4_fr1qu")
 region = Rect2(0, 0, 32, 32)
@@ -68,26 +89,6 @@ region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f2xqu"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rpg3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mokap")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i2dnl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d5dpm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q3okj")
-}],
-"loop": true,
-"name": &"flying",
-"speed": 7.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_edvaa")
@@ -111,6 +112,46 @@ animations = [{
 "texture": SubResource("AtlasTexture_23lb1")
 }],
 "loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpg3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mokap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2dnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5dpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3okj")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fpp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02o87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ownyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnvpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6maj5")
+}],
+"loop": true,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -187,7 +228,7 @@ script = ExtResource("1_wljgj")
 
 [node name="anim" type="AnimatedSprite2D" parent="rocket_cherry"]
 sprite_frames = SubResource("SpriteFrames_f2xqu")
-animation = &"flying"
+animation = &"hurt"
 autoplay = "flying"
 speed_scale = 3.0
 

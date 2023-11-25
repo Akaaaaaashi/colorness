@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 150.0
+var SPEED = 150.0
 var JUMP_FORCE = -250.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -130,9 +130,9 @@ func _input(event):
 				#Habilidade de super pulo
 				if enemy_in_range.ability == "super_jump":
 					JUMP_FORCE = -400.0
-				elif enemy_in_range.ability == "super_speed":
-					pass
-				
+				if enemy_in_range.ability == "super_speed":
+					SPEED = 150.0
+
 
 #Sistema de absorção
 var absorbable := false

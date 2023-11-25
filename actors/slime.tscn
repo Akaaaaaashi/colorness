@@ -320,6 +320,7 @@ shape = SubResource("CapsuleShape2D_gec0u")
 
 [node name="anim" type="AnimationPlayer" parent="." groups=["enemies"]]
 autoplay = "walk"
+speed_scale = 0.8
 libraries = {
 "": SubResource("AnimationLibrary_edcqw")
 }
