@@ -1,0 +1,225 @@
+[gd_scene load_steps=28 format=3 uid="uid://dbheeit0lmakw"]
+
+[ext_resource type="Script" path="res://scripts/rocket_cherry.gd" id="1_wljgj"]
+[ext_resource type="Texture2D" uid="uid://ctxbfau7h56oy" path="res://assets/Jellyfish/patrol.png" id="2_gw20q"]
+[ext_resource type="Texture2D" uid="uid://ftoq0b4g3dct" path="res://assets/Jellyfish/death.png" id="3_kh0tn"]
+[ext_resource type="PackedScene" uid="uid://blyc3kwwvxi1r" path="res://prefabs/hitbox.tscn" id="4_6tx8u"]
+[ext_resource type="Texture2D" uid="uid://iriuu04xfubq" path="res://assets/Jellyfish/stuneed.png" id="4_fr1qu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpg3w"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mokap"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2dnl"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5dpm"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3okj"]
+atlas = ExtResource("2_gw20q")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edvaa"]
+atlas = ExtResource("3_kh0tn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1xrs"]
+atlas = ExtResource("3_kh0tn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7a1k"]
+atlas = ExtResource("3_kh0tn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgtvi"]
+atlas = ExtResource("3_kh0tn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc0of"]
+atlas = ExtResource("3_kh0tn")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouhxn"]
+atlas = ExtResource("3_kh0tn")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lb1"]
+atlas = ExtResource("3_kh0tn")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji3ks"]
+atlas = ExtResource("4_fr1qu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe6ne"]
+atlas = ExtResource("4_fr1qu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6kqd"]
+atlas = ExtResource("4_fr1qu")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2xqu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpg3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mokap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2dnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5dpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3okj")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edvaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1xrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7a1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgtvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc0of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouhxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23lb1")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji3ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe6ne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6kqd")
+}],
+"loop": true,
+"name": &"stuneed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhfr8"]
+size = Vector2(10, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlmeo"]
+size = Vector2(10, 3)
+
+[sub_resource type="Curve2D" id="Curve2D_358u6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, -73)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_syen8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("path2D/path_follow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8k8ci"]
+resource_name = "patrol"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("path2D/path_follow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3uofg"]
+_data = {
+"RESET": SubResource("Animation_syen8"),
+"patrol": SubResource("Animation_8k8ci")
+}
+
+[node name="base_patrol" type="Node2D"]
+
+[node name="rocket_cherry" type="CharacterBody2D" parent="."]
+position = Vector2(-1, -1)
+collision_layer = 4
+script = ExtResource("1_wljgj")
+
+[node name="anim" type="AnimatedSprite2D" parent="rocket_cherry"]
+sprite_frames = SubResource("SpriteFrames_f2xqu")
+animation = &"flying"
+autoplay = "flying"
+speed_scale = 3.0
+
+[node name="collision" type="CollisionShape2D" parent="rocket_cherry"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_rhfr8")
+
+[node name="hitbox" parent="rocket_cherry" instance=ExtResource("4_6tx8u")]
+
+[node name="collision" type="CollisionShape2D" parent="rocket_cherry/hitbox"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_vlmeo")
+debug_color = Color(0.94902, 0, 0, 0.419608)
+
+[node name="path2D" type="Path2D" parent="."]
+position = Vector2(-1, 0)
+curve = SubResource("Curve2D_358u6")
+
+[node name="path_follow2D" type="PathFollow2D" parent="path2D"]
+position = Vector2(0, -1)
+rotates = false
+
+[node name="remote" type="RemoteTransform2D" parent="path2D/path_follow2D"]
+remote_path = NodePath("../../../rocket_cherry")
+
+[node name="spawn_enemy" type="Marker2D" parent="."]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "patrol"
+libraries = {
+"": SubResource("AnimationLibrary_3uofg")
+}
+
+[connection signal="animation_finished" from="rocket_cherry/anim" to="rocket_cherry" method="_on_animations_animation_finished"]
+[connection signal="body_entered" from="rocket_cherry/hitbox" to="rocket_cherry" method="_on_hitbox_body_entered"]

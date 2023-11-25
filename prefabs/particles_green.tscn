@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cymrb2i5pg4cb"]
+
+[sub_resource type="Gradient" id="Gradient_idutw"]
+colors = PackedColorArray(0.658824, 0.764706, 0, 1, 0.164099, 0.130989, 0, 1)
+
+[node name="particles_green" type="CPUParticles2D"]
+amount = 100
+lifetime = 0.6
+emission_shape = 2
+emission_sphere_radius = 3.0
+gravity = Vector2(0, 1)
+scale_amount_min = 0.0
+color_ramp = SubResource("Gradient_idutw")

@@ -1,0 +1,137 @@
+[gd_scene load_steps=14 format=3 uid="uid://b5mqufgwqfg0n"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_xxrs7"]
+[ext_resource type="Texture2D" uid="uid://du1pquioftjpc" path="res://assets/Characters/run.png" id="2_1ops2"]
+[ext_resource type="Texture2D" uid="uid://bfxgm2vmpsvrw" path="res://assets/Characters/idle1.png" id="2_hswu4"]
+[ext_resource type="Texture2D" uid="uid://ddf8rwtgjsae4" path="res://assets/Characters/jump.png" id="3_1tcud"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nb640"]
+load_path = "res://.godot/imported/idle2.png-6e52b1f4bd9e7ba9fccee978b55bbd7e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1g7m"]
+atlas = ExtResource("2_1ops2")
+region = Rect2(0, 0, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a18w"]
+atlas = ExtResource("2_1ops2")
+region = Rect2(16, 0, 16, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7iad"]
+atlas = ExtResource("2_1ops2")
+region = Rect2(32, 0, 16, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tw5ft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hswu4")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hswu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_nb640")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1tcud")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1g7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a18w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7iad")
+}],
+"loop": true,
+"name": &"run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeg1t"]
+size = Vector2(12, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53mo8"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhg5l"]
+size = Vector2(11.5, 5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nai3u"]
+radius = 26.0
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(-7, -3)
+collision_mask = 214
+script = ExtResource("1_xxrs7")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(6.84877, -2.5)
+scale = Vector2(0.926049, 0.9)
+sprite_frames = SubResource("SpriteFrames_tw5ft")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(7, -5)
+shape = SubResource("RectangleShape2D_jeg1t")
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="collision" type="CollisionShape2D" parent="hurtbox"]
+visible = false
+position = Vector2(7, -6)
+shape = SubResource("RectangleShape2D_53mo8")
+debug_color = Color(0.772549, 0, 0.117647, 0.419608)
+
+[node name="remote" type="RemoteTransform2D" parent="."]
+
+[node name="ray_right" type="RayCast2D" parent="."]
+position = Vector2(11, -4)
+target_position = Vector2(4, 0)
+collision_mask = 4
+
+[node name="ray_left" type="RayCast2D" parent="."]
+position = Vector2(3, -4)
+target_position = Vector2(-4, 0)
+collision_mask = 4
+
+[node name="head_collider" type="Area2D" parent="."]
+collision_mask = 64
+
+[node name="head_collsion" type="CollisionShape2D" parent="head_collider"]
+position = Vector2(7, -11.5)
+shape = SubResource("RectangleShape2D_qhg5l")
+
+[node name="range_absorb" type="Area2D" parent="."]
+visible = false
+collision_layer = 32
+collision_mask = 16
+
+[node name="range" type="CollisionShape2D" parent="range_absorb"]
+position = Vector2(7, -5)
+shape = SubResource("CircleShape2D_nai3u")
+debug_color = Color(0.839216, 0, 0.929412, 0.419608)
+
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_entered" from="head_collider" to="." method="_on_head_collider_body_entered"]
+[connection signal="area_entered" from="range_absorb" to="." method="_on_range_absorb_area_entered"]
+[connection signal="area_exited" from="range_absorb" to="." method="_on_range_absorb_area_exited"]

@@ -1,0 +1,219 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhnsgmvvh52x8"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_mnedo"]
+[ext_resource type="Texture2D" uid="uid://d4bbffgpom2jm" path="res://assets/Sprite Pack 2/4 - Robo Pumpkin/Walking (16 x 16).png" id="2_pa0cj"]
+[ext_resource type="Texture2D" uid="uid://cv06ocflua4oh" path="res://assets/Sprite Pack 2/4 - Robo Pumpkin/Hurt (16 x 16).png" id="3_86klu"]
+[ext_resource type="Texture2D" uid="uid://i3agft131onn" path="res://assets/Sprite Pack 2/4 - Robo Pumpkin/Standing (16 x 16).png" id="4_pi6v2"]
+[ext_resource type="PackedScene" uid="uid://blyc3kwwvxi1r" path="res://prefabs/hitbox.tscn" id="5_8r4fp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_755ll"]
+radius = 5.0
+height = 14.0
+
+[sub_resource type="Animation" id="Animation_uvdq1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_pa0cj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0jkol"]
+resource_name = "hurt"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_86klu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_02req"]
+resource_name = "standing"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_pi6v2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1eybt"]
+resource_name = "walk"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_pa0cj")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_edcqw"]
+_data = {
+"RESET": SubResource("Animation_uvdq1"),
+"hurt": SubResource("Animation_0jkol"),
+"standing": SubResource("Animation_02req"),
+"walk": SubResource("Animation_1eybt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p63u5"]
+size = Vector2(10, 1.5)
+
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_mnedo")
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_pa0cj")
+hframes = 2
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_755ll")
+
+[node name="anim" type="AnimationPlayer" parent="." groups=["enemies"]]
+autoplay = "walk"
+speed_scale = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_edcqw")
+}
+
+[node name="wall_detector" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+target_position = Vector2(-7.5, 0)
+collision_mask = 6
+
+[node name="hitbox" parent="." instance=ExtResource("5_8r4fp")]
+position = Vector2(0, -7)
+
+[node name="collision2" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -4.25)
+shape = SubResource("RectangleShape2D_p63u5")
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
