@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var SPEED = 150.0
 var JUMP_FORCE = -250.0
-
+var mode = ""
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
@@ -16,6 +16,7 @@ var direction
 signal player_has_died()
 
 func _physics_process(delta):
+	#print(position)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -90,7 +91,8 @@ func _set_state():
 	if is_hurterd:
 		state = "hurt"
 	if animation.name != state:
-		animation.play(state)
+		print(state+mode)
+		animation.play(state+mode)
 
 
 
@@ -119,17 +121,19 @@ func _input(event):
 				#var particles_scene = preload("res://prefabs/particles_green.tscn")
 				#var particles_green = particles_scene.instance()
 				#particles_green.global_transform = global_transform
-				#get_parent().add_child(particles_green)
+				#get_parent().add_child(particles_green)	
+				enemy_in_range.particles_green.show()	
 				enemy_in_range.texture.hide()
 				enemy_in_range.collision.queue_free()
 				enemy_in_range.hitbox.queue_free()
-				enemy_in_range.particles_green.show()
-				enemy_in_range.particles_green.global_position = global_position
+				enemy_in_range.absorbed = true	
+				#enemy_in_range.particles_green.position = enemy_in_range.particles_green.position.lerp(position, 0.01666666666667 * 2.0)
 				Globals.score += 100
 				#enemy_in_range.queue_free()
 				#Habilidade de super pulo
 				if enemy_in_range.ability == "super_jump":
 					JUMP_FORCE = -400.0
+					mode = "_green"
 				if enemy_in_range.ability == "super_speed":
 					SPEED = 150.0
 

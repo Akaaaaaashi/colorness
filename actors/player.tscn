@@ -1,12 +1,30 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5mqufgwqfg0n"]
+[gd_scene load_steps=20 format=3 uid="uid://b5mqufgwqfg0n"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_xxrs7"]
 [ext_resource type="Texture2D" uid="uid://du1pquioftjpc" path="res://assets/Characters/run.png" id="2_1ops2"]
 [ext_resource type="Texture2D" uid="uid://bfxgm2vmpsvrw" path="res://assets/Characters/idle1.png" id="2_hswu4"]
 [ext_resource type="Texture2D" uid="uid://ddf8rwtgjsae4" path="res://assets/Characters/jump.png" id="3_1tcud"]
+[ext_resource type="Texture2D" path="res://assets/Characters/absorved_transform_green.png" id="3_d7aj6"]
+[ext_resource type="Texture2D" path="res://assets/Characters/jump_green.png" id="4_3a8oa"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nb640"]
 load_path = "res://.godot/imported/idle2.png-6e52b1f4bd9e7ba9fccee978b55bbd7e.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pxww"]
+atlas = ExtResource("3_d7aj6")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yypl8"]
+atlas = ExtResource("3_d7aj6")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dqkn"]
+atlas = ExtResource("3_d7aj6")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uapvk"]
+atlas = ExtResource("3_d7aj6")
+region = Rect2(150, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1g7m"]
 atlas = ExtResource("2_1ops2")
@@ -43,11 +61,36 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7pxww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yypl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dqkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uapvk")
+}],
+"loop": true,
+"name": &"idle_green",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_1tcud")
 }],
 "loop": true,
 "name": &"jump",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3a8oa")
+}],
+"loop": true,
+"name": &"jump_green",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -85,7 +128,7 @@ script = ExtResource("1_xxrs7")
 position = Vector2(6.84877, -2.5)
 scale = Vector2(0.926049, 0.9)
 sprite_frames = SubResource("SpriteFrames_tw5ft")
-animation = &"idle"
+animation = &"idle_green"
 autoplay = "idle"
 
 [node name="collision" type="CollisionShape2D" parent="."]
@@ -122,7 +165,6 @@ position = Vector2(7, -11.5)
 shape = SubResource("RectangleShape2D_qhg5l")
 
 [node name="range_absorb" type="Area2D" parent="."]
-visible = false
 collision_layer = 32
 collision_mask = 16
 

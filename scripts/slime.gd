@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-
 const SPEED = 1200.0
 const JUMP_VELOCITY = -400.0
 var isStunned = false
 var slime_life := 3
 var ability := "super_jump"
+var absorbed := false
 @onready var wall_detector := $wall_detector as RayCast2D
 @onready var texture := $texture as Sprite2D
 @onready var collision := $collision as CollisionShape2D

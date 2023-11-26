@@ -1,50 +1,43 @@
-[gd_scene load_steps=65 format=3 uid="uid://cv6iejejy4sxv"]
+[gd_scene load_steps=57 format=3 uid="uid://qatetdgnqks8"]
 
-[ext_resource type="Texture2D" uid="uid://b4217kjwf436e" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_4qboe"]
-[ext_resource type="Texture2D" uid="uid://bopoixmkagfr4" path="res://assets/Ground/ground_complet.png" id="1_plytb"]
-[ext_resource type="Script" path="res://scripts/world_01.gd" id="1_wgvu1"]
-[ext_resource type="Texture2D" uid="uid://dt0vrota3254f" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_pphds"]
-[ext_resource type="PackedScene" uid="uid://b5mqufgwqfg0n" path="res://actors/player.tscn" id="3_rubwt"]
-[ext_resource type="Texture2D" uid="uid://dvkkb56cd31sf" path="res://assets/Ground/pixil-frame-0.png" id="3_vo140"]
-[ext_resource type="Texture2D" uid="uid://cmikgijm4kgm6" path="res://assets/Ground/Ground_standard-fly.png" id="4_iqpev"]
-[ext_resource type="Texture2D" uid="uid://6axuk7tjrosw" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Acido_frames.png" id="4_rve3i"]
-[ext_resource type="Texture2D" uid="uid://b47phla40eq0k" path="res://assets/Green/Tilesets/Tilesets-green.png" id="5_d7avl"]
-[ext_resource type="Texture2D" uid="uid://cj3qgtfsps62r" path="res://assets/Ground/Ground_standard-Recovered.png" id="5_ysd4a"]
-[ext_resource type="Texture2D" uid="uid://bvlguwutfea0u" path="res://assets/Background/agua.png" id="7_rpkah"]
-[ext_resource type="PackedScene" uid="uid://cvlrdr31s43co" path="res://prefabs/moving_plataform.tscn" id="7_ur6j0"]
-[ext_resource type="Texture2D" uid="uid://dy0jgsb06y77e" path="res://assets/Green/Background/color-background.png" id="13_inqod"]
-[ext_resource type="Texture2D" uid="uid://cb8cmxb67hyxu" path="res://assets/Green/Background/trees-back-1.png" id="14_qh3ql"]
-[ext_resource type="PackedScene" uid="uid://c7nddn6d20dpa" path="res://prefabs/coin.tscn" id="15_0pe1k"]
-[ext_resource type="Texture2D" uid="uid://bx10cotmlrhjx" path="res://assets/Green/Background/trees-back-2.png" id="15_xrh41"]
-[ext_resource type="Shader" path="res://shaders/movement_river.gdshader" id="16_7ynnx"]
-[ext_resource type="Texture2D" uid="uid://cylri1orkjh5i" path="res://assets/Green/Background/river.png" id="16_jm47i"]
-[ext_resource type="Texture2D" uid="uid://bvcfu0xa4mpom" path="res://assets/Green/Background/trees.png" id="17_vyvkf"]
-[ext_resource type="PackedScene" uid="uid://d2i1bvr834b5j" path="res://prefabs/broken_box.tscn" id="18_abgg7"]
-[ext_resource type="Texture2D" uid="uid://bkpaxui4gcfdu" path="res://assets/Green/Background/bush.png" id="18_fv3bk"]
-[ext_resource type="PackedScene" uid="uid://bkbxoym3chni8" path="res://actors/slime.tscn" id="18_mavjf"]
-[ext_resource type="PackedScene" uid="uid://cu1k77iadhptk" path="res://prefabs/falling_plataform.tscn" id="19_bl3to"]
-[ext_resource type="Texture2D" uid="uid://b0be6wxrlkd6y" path="res://assets/Green/Background/ground.png" id="19_ebe2w"]
-[ext_resource type="Texture2D" uid="uid://cgiowah2wsgdn" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_left_NORMAL.png" id="20_50rea"]
-[ext_resource type="Texture2D" uid="uid://12kc0eb43p5h" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_left_PRESSED.png" id="21_4h3vd"]
-[ext_resource type="Texture2D" uid="uid://cwkcvvk3px1uf" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_right_NORMAL.png" id="22_mnhr0"]
-[ext_resource type="Texture2D" uid="uid://btwyw1ltilqjq" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_right_PRESSED.png" id="23_5y5fs"]
-[ext_resource type="Texture2D" uid="uid://bpiwhl3poepa3" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_up_NORMAL.png" id="24_83umm"]
-[ext_resource type="Texture2D" uid="uid://dvm5mdchp8whh" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_up_PRESSED.png" id="25_ji2vm"]
-[ext_resource type="Script" path="res://scripts/warning_sign.gd" id="26_5jbjo"]
-[ext_resource type="Texture2D" uid="uid://cr563k31qx0s4" path="res://assets/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="26_sxpqg"]
-[ext_resource type="Script" path="res://scripts/spike-area.gd" id="28_o5apw"]
-[ext_resource type="Texture2D" uid="uid://dgfvrh8yg3sch" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Coin-Sprites/00_Coin-Sprites.png" id="30_enhu6"]
-[ext_resource type="Script" path="res://scripts/hud_manager.gd" id="30_xdbak"]
-[ext_resource type="Texture2D" uid="uid://byt5ar30rr4lk" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Coin-Sprites/01_Coin-Sprites.png" id="31_icsrm"]
-[ext_resource type="Texture2D" uid="uid://dn4vcy65s8hmt" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Coin-Sprites/02_Coin-Sprites.png" id="32_i7nqr"]
-[ext_resource type="Texture2D" uid="uid://bstuh08nhmt8u" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Coin-Sprites/03_Coin-Sprites.png" id="33_61x0k"]
-[ext_resource type="FontFile" uid="uid://dvoxjgyo8uh0p" path="res://assets/Fonts/RevMiniPixel.ttf" id="34_5nerb"]
-[ext_resource type="Texture2D" uid="uid://dccg1qaepy4oc" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Life-Counter-Icon.png" id="35_shwyj"]
-[ext_resource type="PackedScene" uid="uid://b3a8efgx7swb3" path="res://prefabs/pause_menu.tscn" id="42_b32om"]
-[ext_resource type="PackedScene" uid="uid://c0tnxp1vx7dg4" path="res://prefabs/goal.tscn" id="43_ctxg2"]
-[ext_resource type="Script" path="res://scripts/transition.gd" id="44_jyxhy"]
-[ext_resource type="Shader" path="res://shaders/transition.gdshader" id="44_rmwt0"]
-[ext_resource type="Script" path="res://scripts/color_rect.gd" id="45_lp30g"]
+[ext_resource type="Script" path="res://scripts/world_01.gd" id="1_4ojt4"]
+[ext_resource type="Texture2D" uid="uid://bopoixmkagfr4" path="res://assets/Ground/ground_complet.png" id="2_bdmhf"]
+[ext_resource type="Texture2D" uid="uid://b4217kjwf436e" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="3_2xcg4"]
+[ext_resource type="Texture2D" uid="uid://6axuk7tjrosw" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Acido_frames.png" id="4_n1fel"]
+[ext_resource type="Texture2D" uid="uid://b47phla40eq0k" path="res://assets/Green/Tilesets/Tilesets-green.png" id="5_i3iej"]
+[ext_resource type="Texture2D" uid="uid://dt0vrota3254f" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="6_ea5m3"]
+[ext_resource type="Texture2D" uid="uid://cmikgijm4kgm6" path="res://assets/Ground/Ground_standard-fly.png" id="7_cfkci"]
+[ext_resource type="Texture2D" uid="uid://cj3qgtfsps62r" path="res://assets/Ground/Ground_standard-Recovered.png" id="8_e05ma"]
+[ext_resource type="Texture2D" uid="uid://bvlguwutfea0u" path="res://assets/Background/agua.png" id="9_evmx6"]
+[ext_resource type="Texture2D" uid="uid://dvkkb56cd31sf" path="res://assets/Ground/pixil-frame-0.png" id="10_fyl0i"]
+[ext_resource type="PackedScene" uid="uid://c7nddn6d20dpa" path="res://prefabs/coin.tscn" id="11_iuye6"]
+[ext_resource type="PackedScene" uid="uid://b5mqufgwqfg0n" path="res://actors/player.tscn" id="12_iecyh"]
+[ext_resource type="Texture2D" uid="uid://dmlu7bypk5mgo" path="res://assets/Blue/Background/sky.png" id="13_6f18u"]
+[ext_resource type="Texture2D" uid="uid://l3tc3s0rtb6a" path="res://assets/Blue/Background/clouds-1.png" id="14_rpw3m"]
+[ext_resource type="Texture2D" uid="uid://blo0xwbm8u1ob" path="res://assets/Blue/Background/clouds-2.png" id="15_4si0r"]
+[ext_resource type="Texture2D" uid="uid://cge1w131bwa5p" path="res://assets/Blue/Background/reflect.png" id="16_0s5pv"]
+[ext_resource type="Texture2D" uid="uid://eexsdduuen8a" path="res://assets/Blue/Background/water.png" id="17_iyxqd"]
+[ext_resource type="PackedScene" uid="uid://bkbxoym3chni8" path="res://actors/slime.tscn" id="21_8veww"]
+[ext_resource type="PackedScene" uid="uid://d2i1bvr834b5j" path="res://prefabs/broken_box.tscn" id="22_aljh2"]
+[ext_resource type="PackedScene" uid="uid://cvlrdr31s43co" path="res://prefabs/moving_plataform.tscn" id="23_ljapw"]
+[ext_resource type="PackedScene" uid="uid://cu1k77iadhptk" path="res://prefabs/falling_plataform.tscn" id="24_kji7y"]
+[ext_resource type="Texture2D" uid="uid://cgiowah2wsgdn" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_left_NORMAL.png" id="25_8vpmr"]
+[ext_resource type="Texture2D" uid="uid://12kc0eb43p5h" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_left_PRESSED.png" id="26_p5gy7"]
+[ext_resource type="Texture2D" uid="uid://cwkcvvk3px1uf" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_right_NORMAL.png" id="27_b3og8"]
+[ext_resource type="Texture2D" uid="uid://btwyw1ltilqjq" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_right_PRESSED.png" id="28_lvkmh"]
+[ext_resource type="Texture2D" uid="uid://bpiwhl3poepa3" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_up_NORMAL.png" id="29_3yvub"]
+[ext_resource type="Texture2D" uid="uid://dvm5mdchp8whh" path="res://assets/mini_ui_botoes/mini_ui_buttons/ui_buttons_arrow_up_PRESSED.png" id="30_2uwta"]
+[ext_resource type="Script" path="res://scripts/warning_sign.gd" id="31_l7gvg"]
+[ext_resource type="Texture2D" uid="uid://cr563k31qx0s4" path="res://assets/Mini FX, Items & UI/Mini UI/Speech_Emotes (16 x 16).png" id="32_5ifhw"]
+[ext_resource type="Script" path="res://scripts/spike-area.gd" id="33_avu5c"]
+[ext_resource type="Texture2D" uid="uid://dfp75drlcauvl" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Spikes.png" id="34_a2g4e"]
+[ext_resource type="Script" path="res://scripts/hud_manager.gd" id="35_18x1y"]
+[ext_resource type="Texture2D" uid="uid://dgfvrh8yg3sch" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Coin-Sprites/00_Coin-Sprites.png" id="36_qgxta"]
+[ext_resource type="Texture2D" uid="uid://byt5ar30rr4lk" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Coin-Sprites/01_Coin-Sprites.png" id="37_q3sye"]
+[ext_resource type="Texture2D" uid="uid://dn4vcy65s8hmt" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Coin-Sprites/02_Coin-Sprites.png" id="38_2oobq"]
+[ext_resource type="Texture2D" uid="uid://bstuh08nhmt8u" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Coin-Sprites/03_Coin-Sprites.png" id="39_5cbi1"]
+[ext_resource type="FontFile" uid="uid://dvoxjgyo8uh0p" path="res://assets/Fonts/RevMiniPixel.ttf" id="40_i78gj"]
+[ext_resource type="Texture2D" uid="uid://dccg1qaepy4oc" path="res://assets/Mini FX, Items & UI/Common Pick-ups/coins/Life-Counter-Icon.png" id="41_opph7"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_7xh11"]
 tile_data = PackedInt32Array(0, 65538, 1)
@@ -56,7 +49,7 @@ tile_data = PackedInt32Array(0, 327682, 1)
 tile_data = PackedInt32Array(0, 589826, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j25ce"]
-texture = ExtResource("1_plytb")
+texture = ExtResource("2_bdmhf")
 5:3/0 = 0
 5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:3/0/physics_layer_0/angular_velocity = 0.0
@@ -134,7 +127,7 @@ texture = ExtResource("1_plytb")
 1:9/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_si6mi"]
-texture = ExtResource("1_4qboe")
+texture = ExtResource("3_2xcg4")
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
@@ -266,7 +259,7 @@ texture = ExtResource("1_4qboe")
 4:8/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c60aj"]
-texture = ExtResource("4_rve3i")
+texture = ExtResource("4_n1fel")
 0:0/animation_columns = 2
 0:0/animation_frame_0/duration = 0.25
 0:0/animation_frame_1/duration = 0.25
@@ -287,7 +280,7 @@ texture = ExtResource("4_rve3i")
 2:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_twp67"]
-texture = ExtResource("5_d7avl")
+texture = ExtResource("5_i3iej")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -318,7 +311,7 @@ texture = ExtResource("5_d7avl")
 1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lomb"]
-texture = ExtResource("2_pphds")
+texture = ExtResource("6_ea5m3")
 15:2/0 = 0
 15:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:2/0/physics_layer_0/angular_velocity = 0.0
@@ -393,7 +386,7 @@ texture = ExtResource("2_pphds")
 9:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ibblt"]
-texture = ExtResource("4_iqpev")
+texture = ExtResource("7_cfkci")
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
@@ -420,7 +413,7 @@ texture = ExtResource("4_iqpev")
 3:2/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ebl7"]
-texture = ExtResource("5_ysd4a")
+texture = ExtResource("8_e05ma")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
@@ -435,7 +428,7 @@ texture = ExtResource("5_ysd4a")
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dd7iq"]
-texture = ExtResource("7_rpkah")
+texture = ExtResource("9_evmx6")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -486,7 +479,7 @@ texture = ExtResource("7_rpkah")
 3:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_koh6w"]
-texture = ExtResource("3_vo140")
+texture = ExtResource("10_fyl0i")
 1:2/0 = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:2/0/physics_layer_0/angular_velocity = 0.0
@@ -545,7 +538,7 @@ texture = ExtResource("3_vo140")
 4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pvr38"]
-texture = ExtResource("7_rpkah")
+texture = ExtResource("9_evmx6")
 0:0/animation_columns = 2
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
@@ -592,36 +585,28 @@ pattern_0 = SubResource("TileMapPattern_7xh11")
 pattern_1 = SubResource("TileMapPattern_ncunw")
 pattern_2 = SubResource("TileMapPattern_3og7d")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qigfo"]
-shader = ExtResource("16_7ynnx")
-shader_parameter/move_speed = 0.2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mbu4"]
+size = Vector2(145, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44s35"]
 size = Vector2(50, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmjwp"]
-size = Vector2(192, 7)
+size = Vector2(147, 4)
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_jnlqp"]
 frames = 4
 speed_scale = 3.8
-frame_0/texture = ExtResource("30_enhu6")
-frame_1/texture = ExtResource("31_icsrm")
+frame_0/texture = ExtResource("36_qgxta")
+frame_1/texture = ExtResource("37_q3sye")
 frame_1/duration = 1.0
-frame_2/texture = ExtResource("32_i7nqr")
+frame_2/texture = ExtResource("38_2oobq")
 frame_2/duration = 1.0
-frame_3/texture = ExtResource("33_61x0k")
+frame_3/texture = ExtResource("39_5cbi1")
 frame_3/duration = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3prc"]
-shader = ExtResource("44_rmwt0")
-shader_parameter/lines = 10.0
-shader_parameter/threshold = 0.0
-shader_parameter/line_color_a = Color(0, 0.294118, 0, 1)
-shader_parameter/line_color_b = Color(0.231373, 0.592157, 1, 1)
-
-[node name="World-01" type="Node2D"]
-script = ExtResource("1_wgvu1")
+[node name="World-02" type="Node2D"]
+script = ExtResource("1_4ojt4")
 metadata/_edit_vertical_guides_ = []
 
 [node name="level" type="TileMap" parent="."]
@@ -640,84 +625,69 @@ layer_1/tile_data = PackedInt32Array(786498, 10, 0, 786500, 10, 0, 786502, 10, 0
 
 [node name="coins" type="Node2D" parent="."]
 
-[node name="coin" parent="coins" instance=ExtResource("15_0pe1k")]
+[node name="coin" parent="coins" instance=ExtResource("11_iuye6")]
 position = Vector2(1094, -18)
 scale = Vector2(2, 2)
 
-[node name="coin2" parent="coins" instance=ExtResource("15_0pe1k")]
+[node name="coin2" parent="coins" instance=ExtResource("11_iuye6")]
 position = Vector2(720, 54)
 
-[node name="coin3" parent="coins" instance=ExtResource("15_0pe1k")]
+[node name="coin3" parent="coins" instance=ExtResource("11_iuye6")]
 position = Vector2(654, 69)
 
-[node name="coin4" parent="coins" instance=ExtResource("15_0pe1k")]
+[node name="coin4" parent="coins" instance=ExtResource("11_iuye6")]
 position = Vector2(591, 86)
 
-[node name="coin5" parent="coins" instance=ExtResource("15_0pe1k")]
+[node name="coin5" parent="coins" instance=ExtResource("11_iuye6")]
 position = Vector2(527, 101)
 
-[node name="coin6" parent="coins" instance=ExtResource("15_0pe1k")]
+[node name="coin6" parent="coins" instance=ExtResource("11_iuye6")]
 position = Vector2(390, 124)
 
-[node name="player" parent="." instance=ExtResource("3_rubwt")]
+[node name="area_no_enemy" type="Area2D" parent="."]
+scale = Vector2(1.4, 1.4)
+collision_layer = 128
+
+[node name="collision" type="CollisionShape2D" parent="area_no_enemy"]
+position = Vector2(831, 198)
+shape = SubResource("RectangleShape2D_4mbu4")
+
+[node name="player" parent="." instance=ExtResource("12_iecyh")]
 position = Vector2(130, 110)
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
-[node name="07" type="ParallaxLayer" parent="BG"]
+[node name="05" type="ParallaxLayer" parent="BG"]
 position = Vector2(4, -184)
 motion_mirroring = Vector2(432, 0)
 
-[node name="color_background" type="Sprite2D" parent="BG/07"]
-position = Vector2(-1, 138)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("13_inqod")
+[node name="color_background" type="Sprite2D" parent="BG/05"]
+position = Vector2(-1, 108)
+scale = Vector2(1.89167, 2.10741)
+texture = ExtResource("13_6f18u")
 centered = false
 
-[node name="06" type="ParallaxLayer" parent="BG"]
+[node name="04" type="ParallaxLayer" parent="BG"]
 position = Vector2(2, -184)
 motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(432, 0)
 
-[node name="1-back-trees" type="Sprite2D" parent="BG/06"]
-position = Vector2(-1, 23)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("14_qh3ql")
+[node name="1-back-trees" type="Sprite2D" parent="BG/04"]
+position = Vector2(-1, 39.7408)
+scale = Vector2(1.825, 2.08519)
+texture = ExtResource("14_rpw3m")
 centered = false
 offset = Vector2(0, 50)
 
-[node name="05" type="ParallaxLayer" parent="BG"]
-position = Vector2(8, -368)
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(432, 0)
-
-[node name="2-back-trees" type="Sprite2D" parent="BG/05"]
-position = Vector2(-2, 282)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("15_xrh41")
-centered = false
-
-[node name="04" type="ParallaxLayer" parent="BG"]
-position = Vector2(2, -92)
-motion_scale = Vector2(0.7, 1)
-motion_mirroring = Vector2(432, 0)
-
-[node name="river" type="Sprite2D" parent="BG/04"]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_qigfo")
-position = Vector2(0, 13)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("16_jm47i")
-centered = false
-
 [node name="03" type="ParallaxLayer" parent="BG"]
 position = Vector2(2, -92)
-motion_scale = Vector2(0.9, 1)
+motion_scale = Vector2(1.2, 1.333)
 motion_mirroring = Vector2(432, 0)
 
 [node name="trees" type="Sprite2D" parent="BG/03"]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("17_vyvkf")
+position = Vector2(0, 102)
+scale = Vector2(1.81667, 1.5)
+texture = ExtResource("15_4si0r")
 centered = false
 
 [node name="02" type="ParallaxLayer" parent="BG"]
@@ -726,9 +696,9 @@ motion_scale = Vector2(1.2, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="bush" type="Sprite2D" parent="BG/02"]
-position = Vector2(0, -2)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("18_fv3bk")
+position = Vector2(0, 113)
+scale = Vector2(1.8, 1.41852)
+texture = ExtResource("16_0s5pv")
 centered = false
 
 [node name="01" type="ParallaxLayer" parent="BG"]
@@ -737,9 +707,9 @@ motion_scale = Vector2(1.4, 1)
 motion_mirroring = Vector2(432, 0)
 
 [node name="ground" type="Sprite2D" parent="BG/01"]
-position = Vector2(0, 1)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("19_ebe2w")
+position = Vector2(0, 104)
+scale = Vector2(1.8, 1.5037)
+texture = ExtResource("17_iyxqd")
 centered = false
 
 [node name="camera" type="Camera2D" parent="."]
@@ -755,22 +725,22 @@ editor_draw_limits = true
 [node name="enemies" type="Node2D" parent="."]
 position = Vector2(-2, -49)
 
-[node name="slime" parent="enemies" instance=ExtResource("18_mavjf")]
+[node name="slime" parent="enemies" instance=ExtResource("21_8veww")]
 position = Vector2(426, 232)
 
-[node name="slime2" parent="enemies" instance=ExtResource("18_mavjf")]
+[node name="slime2" parent="enemies" instance=ExtResource("21_8veww")]
 position = Vector2(1123, 166)
 
 [node name="blocks" type="Node2D" parent="."]
 position = Vector2(7, -11.5)
 
-[node name="broken-box3" parent="blocks" instance=ExtResource("18_abgg7")]
+[node name="broken-box3" parent="blocks" instance=ExtResource("22_aljh2")]
 position = Vector2(963, 154.5)
 
-[node name="moving_plataform2" parent="blocks" instance=ExtResource("7_ur6j0")]
+[node name="moving_plataform2" parent="blocks" instance=ExtResource("23_ljapw")]
 position = Vector2(732, 31.5)
 
-[node name="falling-plataform" parent="blocks" instance=ExtResource("19_bl3to")]
+[node name="falling-plataform" parent="blocks" instance=ExtResource("24_kji7y")]
 position = Vector2(1086, 28.5)
 
 [node name="Controles" type="CanvasLayer" parent="."]
@@ -778,35 +748,35 @@ position = Vector2(1086, 28.5)
 [node name="ui_left" type="TouchScreenButton" parent="Controles"]
 position = Vector2(25, 270)
 scale = Vector2(1.7, 1.7)
-texture_normal = ExtResource("20_50rea")
-texture_pressed = ExtResource("21_4h3vd")
+texture_normal = ExtResource("25_8vpmr")
+texture_pressed = ExtResource("26_p5gy7")
 action = "ui_left"
 visibility_mode = 1
 
 [node name="ui_right" type="TouchScreenButton" parent="Controles"]
 position = Vector2(99, 270)
 scale = Vector2(1.7, 1.7)
-texture_normal = ExtResource("22_mnhr0")
-texture_pressed = ExtResource("23_5y5fs")
+texture_normal = ExtResource("27_b3og8")
+texture_pressed = ExtResource("28_lvkmh")
 action = "ui_right"
 visibility_mode = 1
 
 [node name="ui_up" type="TouchScreenButton" parent="Controles"]
 position = Vector2(554, 271)
 scale = Vector2(1.7, 1.86622)
-texture_normal = ExtResource("24_83umm")
-texture_pressed = ExtResource("25_ji2vm")
+texture_normal = ExtResource("29_3yvub")
+texture_pressed = ExtResource("30_2uwta")
 action = "ui_accept"
 visibility_mode = 1
 
 [node name="warning_sign" type="Node2D" parent="."]
 position = Vector2(215, 184)
-script = ExtResource("26_5jbjo")
+script = ExtResource("31_l7gvg")
 
 [node name="texture" type="Sprite2D" parent="warning_sign"]
 visible = false
 position = Vector2(-24, -9)
-texture = ExtResource("26_sxpqg")
+texture = ExtResource("32_5ifhw")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 16)
 
@@ -820,11 +790,19 @@ shape = SubResource("RectangleShape2D_44s35")
 [node name="spike-area" type="Area2D" parent="."]
 position = Vector2(855, 192)
 collision_layer = 2
-script = ExtResource("28_o5apw")
+script = ExtResource("33_avu5c")
 
 [node name="collision" type="CollisionShape2D" parent="spike-area"]
-position = Vector2(272, 17.5)
+position = Vector2(-24, 23)
 shape = SubResource("RectangleShape2D_qmjwp")
+
+[node name="spike" type="Sprite2D" parent="spike-area"]
+texture_repeat = 2
+position = Vector2(-25, 24)
+scale = Vector2(0.460294, 0.447368)
+texture = ExtResource("34_a2g4e")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 8)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -835,7 +813,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("30_xdbak")
+script = ExtResource("35_18x1y")
 default_minutes = 5
 
 [node name="clock_timer" type="Timer" parent="HUD/control"]
@@ -872,7 +850,7 @@ texture = SubResource("AnimatedTexture_jnlqp")
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("34_5nerb")
+theme_override_fonts/font = ExtResource("40_i78gj")
 theme_override_font_sizes/font_size = 8
 text = "0000
 "
@@ -886,7 +864,7 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("34_5nerb")
+theme_override_fonts/font = ExtResource("40_i78gj")
 theme_override_font_sizes/font_size = 8
 text = "SCORE :
 "
@@ -896,7 +874,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("34_5nerb")
+theme_override_fonts/font = ExtResource("40_i78gj")
 theme_override_font_sizes/font_size = 8
 text = "000000
 "
@@ -911,7 +889,7 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("34_5nerb")
+theme_override_fonts/font = ExtResource("40_i78gj")
 theme_override_font_sizes/font_size = 8
 text = "TIME :
 "
@@ -921,7 +899,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("34_5nerb")
+theme_override_fonts/font = ExtResource("40_i78gj")
 theme_override_font_sizes/font_size = 8
 text = "00:00
 "
@@ -936,13 +914,13 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("35_shwyj")
+texture = ExtResource("41_opph7")
 
 [node name="life_separator" type="Label" parent="HUD/control/container/life_container"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("34_5nerb")
+theme_override_fonts/font = ExtResource("40_i78gj")
 theme_override_font_sizes/font_size = 8
 text = "X
 "
@@ -951,29 +929,10 @@ text = "X
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("34_5nerb")
+theme_override_fonts/font = ExtResource("40_i78gj")
 theme_override_font_sizes/font_size = 8
 text = "03
 "
-
-[node name="pause_menu" parent="." instance=ExtResource("42_b32om")]
-visible = false
-
-[node name="goal" parent="." instance=ExtResource("43_ctxg2")]
-position = Vector2(1122, 137)
-
-[node name="transition" type="CanvasLayer" parent="."]
-script = ExtResource("44_jyxhy")
-
-[node name="color_rect" type="ColorRect" parent="transition"]
-material = SubResource("ShaderMaterial_o3prc")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-script = ExtResource("45_lp30g")
 
 [connection signal="body_entered" from="spike-area" to="spike-area" method="_on_body_entered"]
 [connection signal="timeout" from="HUD/control/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

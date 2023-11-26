@@ -173,7 +173,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rhfr8"]
-size = Vector2(10, 18.5)
+size = Vector2(10, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlmeo"]
 size = Vector2(10, 3)
@@ -226,10 +226,7 @@ script = ExtResource("1_sip4x")
 
 [node name="rocket_cherry" type="CharacterBody2D" parent="."]
 position = Vector2(-1, -1)
-disable_mode = 1
 collision_layer = 4
-collision_mask = 2
-collision_priority = 2.0
 script = ExtResource("1_wljgj")
 
 [node name="anim" type="AnimatedSprite2D" parent="rocket_cherry"]
@@ -239,7 +236,7 @@ autoplay = "flying"
 speed_scale = 3.0
 
 [node name="collision" type="CollisionShape2D" parent="rocket_cherry"]
-position = Vector2(0, 6.75)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_rhfr8")
 
 [node name="hitbox" parent="rocket_cherry" instance=ExtResource("4_6tx8u")]

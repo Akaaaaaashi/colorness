@@ -316,9 +316,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	#print(position)
 	if slime.absorbed == true:
-		position = global_position
+		pass
+		#global_position = global_position.lerp(player_position, delta * 0.2)
 
 
 func _on_range_follow_body_entered(body):
@@ -347,6 +347,7 @@ shape = SubResource("CapsuleShape2D_gec0u")
 
 [node name="anim" type="AnimationPlayer" parent="." groups=["enemies"]]
 autoplay = "walk"
+speed_scale = 0.8
 libraries = {
 "": SubResource("AnimationLibrary_edcqw")
 }
@@ -367,9 +368,10 @@ shape = SubResource("RectangleShape2D_42sp1")
 visible = false
 position = Vector2(0, -8)
 amount = 500
-lifetime = 3.0
+lifetime = 2.0
+explosiveness = 0.55
 emission_sphere_radius = 6.0
-gravity = Vector2(-10, -10)
+gravity = Vector2(-100, -10000)
 script = SubResource("GDScript_fbymo")
 
 [node name="range_follow" type="Area2D" parent="particles_green"]

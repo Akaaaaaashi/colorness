@@ -1,9 +1,14 @@
-extends CharacterBody2D
+extends EnemyBase
 
 @export var enemy_score := 100
-@onready var anim = $anim as AnimatedSprite2D
-@onready var path_2d = $path2D as Path2D
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var anim2d = $anim as AnimatedSprite2D
+@onready var path_2d = $"../path2D" as Path2D
+@onready var animat = $"../anim" as AnimationPlayer
+@onready var spawn_enemy = $"../spawn_enemy" as Marker2D
+var active_gravity = false
+
+
+
 
 var jellyfish_life := 3
 
@@ -13,26 +18,34 @@ var ability := "super_speed"
 
 func _on_hitbox_body_entered(body):
 	if isStunned:
-		anim.play("death")
+		anim2d.play("death")
 	else:
-		anim.play("hurt")
-
+		anim2d.play("hurt")
+		
+		
+func _physics_process(delta):
+	pass
+	
+func _process(delta):
+	if active_gravity:
+		position.y += 15 * delta
 
 func _on_animations_animation_finished():
-	if anim.animation == "hurt":
+	if anim2d.animation == "hurt":
 		if jellyfish_life <= 0:
 			isStunned = true
-			anim.play("stunned")
+			anim2d.play("stunned")
+			path_2d.queue_free()
+			animat.queue_free()
+			spawn_enemy.queue_free()
+			active_gravity = true
 		else:
 			jellyfish_life -= 1
-			anim.play("flying")
-	elif anim.animation == "death":
+			anim2d.play("flying")
+	elif anim2d.animation == "death":
 			queue_free()
 			Globals.score += enemy_score
-		
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	
+
 
 

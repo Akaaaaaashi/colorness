@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogManager="*res://singletons/dialog_manager.gd"
 Globals="*res://singletons/globals.gd"
+Player="*res://actors/player.tscn"
 
 [display]
 
